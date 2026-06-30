@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DA Team · 대시보드 모음</title>
+<style>
+  :root{
+    --bg:#f6f5f2;
+    --ink:#1c1c1a;
+    --sub:#6b6862;
+    --line:#e3e0d8;
+    --card:#ffffff;
+    --accent:#c4502a;
+    --accent-soft:#f5e2d8;
+    --mono: "SF Mono", "Roboto Mono", Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    line-height:1.5;
+  }
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:64px 28px 100px;
+  }
+  header.top{
+    margin-bottom:56px;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--accent);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0 0 10px;
+  }
+  .lede{
+    color:var(--sub);
+    font-size:15px;
+    max-width:520px;
+  }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin:64px 0 20px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .section-head h2{
+    font-size:19px;
+    margin:0;
+    font-weight:700;
+  }
+  .section-head .count{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--sub);
+  }
+  .section-desc{
+    color:var(--sub);
+    font-size:13.5px;
+    margin:-10px 0 20px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+  }
+  @media (max-width:680px){
+    .grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{
+    border-color:#cfcabd;
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px -16px rgba(0,0,0,0.25);
+  }
+  .thumb{
+    aspect-ratio:16/10;
+    background:#eeece6;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top;
+    display:block;
+  }
+  .lock{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:rgba(28,28,26,0.78);
+    color:#fff;
+    font-size:11px;
+    font-family:var(--mono);
+    padding:3px 8px;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+  .body{
+    padding:16px 18px 18px;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:0.04em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .card h3{
+    font-size:16px;
+    margin:0 0 6px;
+    font-weight:700;
+  }
+  .card p{
+    font-size:13px;
+    color:var(--sub);
+    margin:0;
+  }
+  .meta{
+    margin-top:12px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+    font-size:11.5px;
+    color:#9a968c;
+    font-family:var(--mono);
+    display:flex;
+    justify-content:space-between;
+  }
+
+  footer{
+    margin-top:80px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:var(--sub);
+    font-family:var(--mono);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="eyebrow">전략기획팀 · Internal</div>
+    <h1>대시보드 모음</h1>
+    <p class="lede">트래픽 모니터링과 분석 자료를 한 곳에서 확인하세요.</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <h2>운영 대시보드</h2>
+      <span class="count">04 — 실시간 / 정기 모니터링</span>
+    </div>
+    <p class="section-desc">매주·매일 체크하는 트래픽 지표입니다.</p>
+
+    <div class="grid">
+
+      <a class="card" href="https://qwer538476-pvalue.github.io/weekly_traffic/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="weekly_traffic.png" alt="주간 트래픽 리포트 미리보기">
+        </div>
+        <div class="body">
+          <span class="tag">WEEKLY REPORT</span>
+          <h3>주간 트래픽 리포트</h3>
+          <p>전체 PV·UV와 전주 대비 추이를 확인합니다.</p>
+          <div class="meta"><span>weekly_traffic</span><span>매주 업데이트</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="https://qwer538476-pvalue.github.io/traffic-indicator/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="traffic-indicator.png" alt="GA4·HERB 트래픽 모니터링 미리보기">
+        </div>
+        <div class="body">
+          <span class="tag">ANOMALY DETECTION</span>
+          <h3>GA4·HERB 트래픽 모니터링</h3>
+          <p>GA4·HERB 간 PV 비중 이상치를 탐지합니다.</p>
+          <div class="meta"><span>traffic-indicator</span><span>실시간 직조회</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="https://qwer538476-pvalue.github.io/board/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="board.png" alt="유입채널 PV 대시보드 미리보기">
+          <span class="lock">🔒 비밀번호</span>
+        </div>
+        <div class="body">
+          <span class="tag">CHANNEL PV</span>
+          <h3>유입채널 PV 대시보드</h3>
+          <p>채널별 PV 추이와 보정 전후 데이터를 비교합니다.</p>
+          <div class="meta"><span>board</span><span>실시간 직조회</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="https://qwer538476-pvalue.github.io/channel-ranking/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="channel-ranking.png" alt="트래픽 리포트 미리보기">
+          <span class="lock">🔒 비밀번호</span>
+        </div>
+        <div class="body">
+          <span class="tag">PORTAL RANKING</span>
+          <h3>트래픽 리포트</h3>
+          <p>포털·구글 유입 기사 TOP 10을 확인합니다.</p>
+          <div class="meta"><span>channel-ranking</span><span>일·주·월간</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>자료 / 문서</h2>
+      <span class="count">01 — 참고 자료</span>
+    </div>
+    <p class="section-desc">회의 자료와 산출 방법 등 참고용 문서입니다.</p>
+
+    <div class="grid">
+
+      <a class="card" href="https://qwer538476-pvalue.github.io/datatf-brief-0527/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="datatf-brief-0527.png" alt="통계 페이지 개편 회의 미리보기">
+        </div>
+        <div class="body">
+          <span class="tag">MEETING BRIEF · 25.05.27</span>
+          <h3>통계 페이지 개편 회의</h3>
+          <p>대표화면 시안과 H-index 산출 방법 자료입니다.</p>
+          <div class="meta"><span>datatf-brief-0527</span><span>회의 자료</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>전략기획팀</span>
+    <span>내부 공유용 · 외부 배포 금지</span>
+  </footer>
+
+</div>
+</body>
+</html>
